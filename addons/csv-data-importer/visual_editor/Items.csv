@@ -1,0 +1,10 @@
+id,name,description,type,rank,max_stack,icon,sell_prize,buy_prize,binding
+int,str,str,str,int,int,str,int,int,json
+Id,Name,Description,Type,Rank,MaxStack,Icon,Sell,Buy,Binding
+500,Potion of Healing,Potion that heals your wound. Restore a small amount of HP.,Consumable,3,999,,100,200,
+501,Potion of Healing +,Potion that heals your wound. Restore a moderate amount of HP.,Consumable,4,999,,100,200,
+502,Potion of Healing ++,Potion that heals your wound. Restore a large amount of HP.,Consumable,5,999,,100,200,
+503,Potion of Regeneration,Potion that heals your wound. Slowly restore your hp.,Consumable,3,999,,100,200,
+504,Potion of Regeneration +,Potion that heals your wound. Restore your hp.,Consumable,4,999,,100,200,
+505,Potion of Regeneration ++,Potion that heals your wound. Quicakly Restore your hp.,Consumable,5,999,,100,200,
+506,Basic Camping Kit,Use this to Set up a campfire,Consumable,1,999,,100,200,
