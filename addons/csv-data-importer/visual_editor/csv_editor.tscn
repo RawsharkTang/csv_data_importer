@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt02vbcqgxekm"]
+[gd_scene load_steps=5 format=3 uid="uid://bt02vbcqgxekm"]
 
 [ext_resource type="Script" uid="uid://cuvxs0iag2c8n" path="res://addons/csv-data-importer/visual_editor/csv_editor.gd" id="2_rwawx"]
 
@@ -10,20 +10,6 @@
 ItemList/colors/guide_color = Color(0.65098, 0.65098, 0.65098, 0.498039)
 ItemList/styles/focus = SubResource("StyleBoxEmpty_j63kb")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_km775")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlmuw"]
-content_margin_left = 6.0
-content_margin_top = 5.0
-content_margin_right = 6.0
-content_margin_bottom = 5.0
-bg_color = Color(0.168, 0.182, 0.196, 1)
-border_color = Color(0.132, 0.143, 0.154, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 3
-anti_aliasing = false
 
 [node name="CsvEditor" type="PanelContainer"]
 anchors_preset = 15
@@ -59,19 +45,3 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="PanelContainer" type="PanelContainer" parent="VSplitContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wlmuw")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="VSplitContainer/PanelContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-
-[node name="EditContainer" type="VBoxContainer" parent="VSplitContainer/PanelContainer/ScrollContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="BoolTest" type="CheckButton" parent="VSplitContainer/PanelContainer/ScrollContainer/EditContainer"]
-layout_mode = 2
-text = "Bool"
