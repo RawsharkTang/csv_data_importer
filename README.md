@@ -1,17 +1,17 @@
 ## CSVResource C#
-A plugin inspired by [godot-csv-typed-importer](https://github.com/citizenll/godot-csv-typed-importer.git) 
-Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser.  
-Import csv table and access the data with C# and GDscript code! 
+- A plugin inspired by [godot-csv-typed-importer](https://github.com/citizenll/godot-csv-typed-importer.git)  
+- Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser.  
+- Import csv table and access the data with C# and GDscript code! 
 
 ### How to use
 ![alt text](image.png)
-- Header (1st row) is needed
-- Support Comma or tab Separator, or you can use Auto and leave it the sep to decide.
-  - Check [sep](https://github.com/nietras/Sep.git) to see more detail
-- 2rd row can be set as type indicator.
-  - Current Supported Type: int/float/string/bool/json
-    - json type use the godot str_to_var native calls
-- Skip row can be set to skip a second header row.
+1. Header (1st row) is needed
+2. Support Comma or tab Separator, or you can use Auto and leave it the sep to decide.
+   1. Check [sep](https://github.com/nietras/Sep.git) to see more detail
+3. 2rd row can be set as type indicator.
+   1. Current Supported Type: int/float/string/bool/json
+   2. json type uses the godot str_to_var native calls
+4. Skip row can be set to skip a second header row.
 
 ```
 id,name,description,level,percentage,switch,sequence
