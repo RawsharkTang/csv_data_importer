@@ -5,6 +5,7 @@
 
 ### Installation
 1. Add Sep Package to your .csproj file
+2. Build the project and enable the plugin.
 ```
 <Project Sdk="Godot.NET.Sdk/4.4.1">
   <PropertyGroup>
@@ -16,7 +17,6 @@
   </ItemGroup>
 </Project>
 ```
-Then build the project and enable the plugin.
 
 ### How to use
 ![alt text](image.png)
