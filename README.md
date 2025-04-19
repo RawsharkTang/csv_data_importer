@@ -1,7 +1,7 @@
 ## CSVResource C#
-A plugin inspired by [godot-csv-typed-importer](https://github.com/citizenll/godot-csv-typed-importer.git)
-Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser. 
-Import csv table and access the data with C# and GDscript code!
+A plugin inspired by [godot-csv-typed-importer](https://github.com/citizenll/godot-csv-typed-importer.git) 
+Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser.  
+Import csv table and access the data with C# and GDscript code! 
 
 ### How to use
 ![alt text](image.png)
