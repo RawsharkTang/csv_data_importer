@@ -8,16 +8,10 @@
 
 config_version=5
 
-[GDScript_Formatter]
-
-format_on_save=175
-fast_but_unsafe=175
-
 [application]
 
 config/name="csv_data_importer"
-run/main_scene="uid://bt02vbcqgxekm"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
@@ -26,4 +20,4 @@ project/assembly_name="csv_data_importer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/csvdata/plugin.cfg")

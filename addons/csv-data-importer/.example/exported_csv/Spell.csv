@@ -1,9 +1,0 @@
-id,name,description,type,rank,hit_rate
-int,str,str,str,int,int
-Id,Name,Description,Type,Rank,Hit Rate
-4000,Fire Spark,A tiny spark. Small but quite dangerous for a beginner Mage.,Fire,1,85
-4100,Arcane Missile,Cast a magic missile toward the target. A reliable spell that never misses.,Arcane,1,100
-4200,Acid Shot,Create a slowly-moving water drop full of deadly acid. A spell that might weakens your opponents' defense.,Acid,1,75
-4300,Electric Arc,A electric arc with high voltage that burst into a spark.,Electric,1,95
-4400,Thunder Noise,A thunderous sound that impact every object around you.,Thunder,1,90
-4500,Bubble Shot,"A spell that throw a amount of highly active bubble, damaging your opponent.",Water,1,85

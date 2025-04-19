@@ -1,6 +1,6 @@
 {
-    "godotTools.editorPath.godot4": "f:\\ProgramFiles\\Godot_v4.4-rc1_mono_win64\\Godot_v4.4-rc1_mono_win64.exe",
-    "cSpell.words": [
-        "elif"
-    ]
+    "godotTools.editorPath.godot4": "e:\\Program Files\\Godot\\Godot_v4.4.1-stable_mono_win64\\Godot_v4.4.1-stable_mono_win64.exe",
+    "cSpell.words": [],
+    "dotnet.preferVisualStudioCodeFileSystemWatcher": true,
+    "microsoft-authentication.authority": "https://login.microsoftonline.com"
 }
