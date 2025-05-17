@@ -138,35 +138,42 @@ public partial class CSVImport : EditorImportPlugin
                 var key = row[0].ToString();
                 foreach (var h in csv_resource._headers)
                 {
+                    Variant v = Variant.From(row[h].ToString());
                     if (parse)
                     {
                         type_row.TryGetValue(h, out string type_name);
                         switch (type_name)
                         {
                             case "string":
-                                value_dict.Add(h, Variant.From(row[h].Parse<string>()));
+                                v = Variant.From(row[h].Parse<string>());
+                                // value_dict.Add(h, Variant.From(row[h].Parse<string>()));
                                 break;
                             case "int":
-                                value_dict.Add(h, Variant.From(row[h].Parse<int>()));
+                                v = Variant.From(row[h].Parse<int>());
+                                // value_dict.Add(h, Variant.From(row[h].Parse<int>()));
                                 break;
                             case "float":
-                                value_dict.Add(h, Variant.From(row[h].Parse<float>()));
+                                v = Variant.From(row[h].Parse<float>());
+                                // value_dict.Add(h, Variant.From(row[h].Parse<float>()));
                                 break;
                             case "bool":
-                                value_dict.Add(h, Variant.From(row[h].Parse<bool>()));
+                                v = Variant.From(row[h].Parse<bool>());
+                                // value_dict.Add(h, Variant.From(row[h].Parse<bool>()));
                                 break;
                             case "json":
-                                value_dict.Add(h, GD.StrToVar(row[h].ToString()));
+                                v = GD.StrToVar(row[h].ToString());
+                                // value_dict.Add(h, GD.StrToVar(row[h].ToString()));
                                 break;
                             default:
                                 break;
                         }
                     }
-                    else
-                    {
-                        value_dict.Add(h, row[h].ToString());
-                        // value_dict.Add(h, GD.StrToVar(row[h].ToString()));
-                    }
+                    // else
+                    // {
+                    //     v = Variant.From(row[h].ToString());
+                    //     // value_dict.Add(h, GD.StrToVar(row[h].ToString()));
+                    // }
+                    value_dict.Add(h, v);
                 }
                 // csv_resource.Data.Add(key, value_dict);
                 csv_resource._data.Add(key, value_dict);

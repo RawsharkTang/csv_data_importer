@@ -10,16 +10,27 @@ public partial class CSVResource : Resource
         set => _headers = [.. value]; // Convert Godot Array to List
     }
 
-    public List<string> _headers = new List<string>();
+    public List<string> _headers = [];
 
     [Export]
     public Godot.Collections.Dictionary<string, Godot.Collections.Dictionary> Data
     {
-        get => new Godot.Collections.Dictionary<string, Godot.Collections.Dictionary>(_data);
-        set => _data = new Dictionary<string, Godot.Collections.Dictionary>(value);
+        get => GetData();
+        set => SetData(value);
     }
 
-    public Dictionary<string, Godot.Collections.Dictionary> _data = new();
+
+    public Dictionary<string, Godot.Collections.Dictionary> _data = [];
+
+    public Godot.Collections.Dictionary<string, Godot.Collections.Dictionary> GetData()
+    {
+        return new Godot.Collections.Dictionary<string, Godot.Collections.Dictionary>(_data);
+    }
+
+    public void SetData(Godot.Collections.Dictionary<string, Godot.Collections.Dictionary> value)
+    {
+        _data = new Dictionary<string, Godot.Collections.Dictionary>(value);
+    }
 
     public Godot.Collections.Dictionary Fetch(string key)
     {

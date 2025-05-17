@@ -3,6 +3,21 @@
 - Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser.  
 - Import csv table and access the data with C# and GDscript code! 
 
+### Installation
+1. Add Sep Package to your .csproj file
+2. Build the project and enable the plugin.
+```
+<Project Sdk="Godot.NET.Sdk/4.4.1">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Sep" Version="0.9.0" />
+  </ItemGroup>
+</Project>
+```
+
 ### How to use
 ![alt text](image.png)
 1. Header (1st row) is needed
