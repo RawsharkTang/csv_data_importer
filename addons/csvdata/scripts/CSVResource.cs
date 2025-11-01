@@ -15,20 +15,16 @@ public partial class CSVResource : Resource {
     /// </summary>
     [Export]
     public Godot.Collections.Dictionary<StringName, Godot.Collections.Dictionary> Data {
-        get => GetData();
-        set => SetData(value);
+        get {
+            return new Godot.Collections.Dictionary<StringName, Godot.Collections.Dictionary>(_data);
+        }
+        set {
+            _data = new Dictionary<StringName, Godot.Collections.Dictionary>(value);
+        }
     }
-
 
     public Dictionary<StringName, Godot.Collections.Dictionary> _data = [];
 
-    public Godot.Collections.Dictionary<StringName, Godot.Collections.Dictionary> GetData() {
-        return new Godot.Collections.Dictionary<StringName, Godot.Collections.Dictionary>(_data);
-    }
-
-    public void SetData(Godot.Collections.Dictionary<StringName, Godot.Collections.Dictionary> value) {
-        _data = new Dictionary<StringName, Godot.Collections.Dictionary>(value);
-    }
 
     public Godot.Collections.Dictionary Fetch(string key) {
         _data.TryGetValue(key, out var value);

@@ -124,6 +124,10 @@ public partial class CSVImport : EditorImportPlugin {
                                 v = Variant.From(row[h].Parse<string>());
                                 // value_dict.Add(h, Variant.From(row[h].Parse<string>()));
                                 break;
+                            case "stringName":
+                                v = Variant.From(row[h].Parse<string>());
+                                // value_dict.Add(h, Variant.From(row[h].Parse<string>()));
+                                break;
                             case "int":
                                 v = Variant.From(row[h].Parse<int>());
                                 // value_dict.Add(h, Variant.From(row[h].Parse<int>()));
