@@ -1,0 +1,17 @@
+[remap]
+
+importer="luoshark.csv_resource"
+type="CSVData"
+uid="uid://c5tm5urtgd68u"
+path="res://.godot/imported/TestData2.csv-4f16a61dd85f0d830de8a538b175c6a7.tres"
+
+[deps]
+
+source_file="res://csvdata/TestData2.csv"
+dest_files=["res://.godot/imported/TestData2.csv-4f16a61dd85f0d830de8a538b175c6a7.tres"]
+
+[params]
+
+Parse=true
+Delimiter=0
+SkipRow=1

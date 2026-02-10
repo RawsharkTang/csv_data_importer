@@ -4,3 +4,4 @@
 
 [node name="DataManager" type="Node"]
 script = ExtResource("1_wpyi5")
+csv_path = "res://csv/TestData2.csv"

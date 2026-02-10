@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bpevj3o0d5irr"
+
+[deps]
+
+files=["res://csvdata/TestData.name.translation", "res://csvdata/TestData.description.translation", "res://csvdata/TestData.level.translation", "res://csvdata/TestData.percentage.translation", "res://csvdata/TestData.switch.translation", "res://csvdata/TestData.sequence.translation"]
+
+source_file="res://csvdata/TestData.csv"
+dest_files=["res://csvdata/TestData.name.translation", "res://csvdata/TestData.description.translation", "res://csvdata/TestData.level.translation", "res://csvdata/TestData.percentage.translation", "res://csvdata/TestData.switch.translation", "res://csvdata/TestData.sequence.translation"]
+
+[params]
+
+compress=true
+delimiter=0

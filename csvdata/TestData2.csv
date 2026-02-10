@@ -1,0 +1,4 @@
+id,name,description,level,percentage,switch,sequence
+string,string,string,int,float,bool,json
+id,Name,description,Rank,Hit Rate,can_hit,Damage
+foo_0,Foo,Test data for csv importer,1,0.1,True,"[1,2,3]"

@@ -1,0 +1,5 @@
+id,name,description
+string,string,string
+Id,Name,Description
+herb_0,Healing Herb,Herbs used to cure wound.
+potion_0,Potion Of Healing,Instantly recover health points

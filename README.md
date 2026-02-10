@@ -1,25 +1,39 @@
-## CSVResource C#
+## CSVData C #
+
 - A plugin inspired by [godot-csv-typed-importer](https://github.com/citizenll/godot-csv-typed-importer.git)  
 - Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser.  
-- Import csv table and access the data with C# and GDscript code! 
+- Import csv table and access the data with C# and GDscript code!
+
+### Updates
+
+- Upgrades the project to 4.6
+- now support csvdata tsvdata as fileExtension
+
+#### Important Notes
+
+Since 4.6 fixed the csv bug and force open csv as text in text editor, the generated csvdata resources are not loaded in editor mode.
 
 ### Installation
+
 1. Add Sep Package to your .csproj file
 2. Build the project and enable the plugin.
+
 ```
 <Project Sdk="Godot.NET.Sdk/4.4.1">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
+ <TargetFramework>net8.0</TargetFramework>
+ <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Sep" Version="0.9.0" />
+ <PackageReference Include="Sep" Version="0.9.0" />
   </ItemGroup>
 </Project>
 ```
 
 ### How to use
+
 ![alt text](image.png)
+
 1. Header (1st row) is needed
 2. Support Comma or tab Separator, or you can use Auto and leave it the sep to decide.
    1. Check [sep](https://github.com/nietras/Sep.git) to see more detail
@@ -40,7 +54,6 @@ foo_0,Foo,Test data for csv importer,1,0.1,True,"[1,2,3]"
 | string | string | string                     | int   | float      | bool    | json     |
 | Id     | Name   | Description                | Level | Percentage | Boolean | Sequence |
 | foo_0  | Foo    | Test data for csv importer | 1     | 0.1        | TRUE    | [1,2,3]  |
-
 
 ### MIT License
 
