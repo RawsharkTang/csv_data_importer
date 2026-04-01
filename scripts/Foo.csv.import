@@ -3,12 +3,12 @@
 importer="luoshark.csv_resource"
 type="CSVData"
 uid="uid://bdnc7gwgjdx2c"
-path="res://.godot/imported/Foo.csv-9f3a75ad1ed188dd293fb06b9e806678.tres"
+path="res://.godot/imported/Foo.csv-9f3a75ad1ed188dd293fb06b9e806678.res"
 
 [deps]
 
 source_file="res://scripts/Foo.csv"
-dest_files=["res://.godot/imported/Foo.csv-9f3a75ad1ed188dd293fb06b9e806678.tres"]
+dest_files=["res://.godot/imported/Foo.csv-9f3a75ad1ed188dd293fb06b9e806678.res"]
 
 [params]
 

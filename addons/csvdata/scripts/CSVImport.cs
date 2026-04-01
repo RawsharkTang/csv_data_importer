@@ -56,7 +56,7 @@ namespace CSVDataImporter
 
         public override string _GetSaveExtension()
         {
-            return "tres";
+            return "res";
         }
 
         public override int _GetPresetCount()
