@@ -1,25 +1,26 @@
-## CSVData C #
+# CSVDataImporter
 
 - A plugin inspired by [godot-csv-typed-importer](https://github.com/citizenll/godot-csv-typed-importer.git)  
 - Basically a wrapper for [sep](https://github.com/nietras/Sep.git) csv parser.  
 - Import csv table and access the data with C# and GDscript code!
+- helper class and extension method to speed up your workflow
 
-### Updates
+## Updates
 
 - Upgrades the project to 4.6
 - now support csvdata tsvdata as fileExtension
 - add extension method and attribute class to help with data convert
 
-#### Important Notes
+## Important Notes
 
-Since 4.6 fixed the csv bug and force open csv as text in text editor, the generated csvdata resources are not loaded in editor mode.
+Godot 4.6 fixed the csv bug and force open csv as text in text editor. The imported resource is not visible currently in editor mode but the run time is not affected.
 
-### Installation
+## Installation
 
 1. Add Sep Package to your .csproj file
 2. Build the project and enable the plugin.
 
-```
+```xml
 <Project Sdk="Godot.NET.Sdk/4.5.1">
   <PropertyGroup>
  <TargetFramework>net8.0</TargetFramework>
@@ -31,7 +32,9 @@ Since 4.6 fixed the csv bug and force open csv as text in text editor, the gener
 </Project>
 ```
 
-### How to use
+## How to use
+
+### CSV Source
 
 ![alt text](image.png)
 
@@ -43,20 +46,69 @@ Since 4.6 fixed the csv bug and force open csv as text in text editor, the gener
    2. json type uses the godot str_to_var native calls
 4. Skip row can be set to skip a second header row.
 
-```md
-id,name,description,level,percentage,switch,sequence
-string,string,string,int,float,bool,json
-id,Name,description,Rank,Hit Rate,can_hit,Damage
-foo_0,Foo,Test data for csv importer,1,0.1,True,"[1,2,3]"
+```csv
+id,foo
+string,string
+ID,FOO
+1,Hello
+2,World
 ```
 
-| id     | name   | description                | level | percentage | boolean | sequence |
-| ------ | ------ | -------------------------- | ----- | ---------- | ------- | -------- |
-| string | string | string                     | int   | float      | bool    | json     |
-| Id     | Name   | Description                | Level | Percentage | Boolean | Sequence |
-| foo_0  | Foo    | Test data for csv importer | 1     | 0.1        | TRUE    | [1,2,3]  |
+### Code Example
 
-### MIT License
+#### 1.First create a container for the target object
+<!-- The IIndexed interface is for id tracking, but is not really mandatory
+Feel free to change the extension method to remove the interface -->
+```csharp
+using CSVDataImporter;
+using Godot;
+[GlobalClass]
+public partial class Foo : RefCounted, IIndexed
+{
+    public StringName ID { get; set; }
+    [ColumnName("foo")] public string FOO { get; set; }
+    public override string ToString()
+    {
+        return $"ID: {ID}, FOO: {FOO}";
+    }
+}
+```
+
+#### 2.Load it from your c# script with generic method
+
+```csharp
+using CSVDataImporter;
+using Godot;
+
+public partial class CSharpLoadFirst : Node
+{
+    public override void _Ready()
+    {
+    }
+    public Foo GetFoo(string id)
+    {
+        var data = GD.Load<CSVData>("res://scripts/Foo.csv");
+        if (data == null)
+        {
+            GD.PrintErr("Failed to load CSV data.");
+            return null;
+        }
+        var foo = data.ParseRow<Foo>(id);
+        return foo;
+    }
+}
+```
+
+#### 3.Call method from gds and retrieve the object
+
+```
+func _ready():
+ var c = get_node("%CSharpLoader")
+ var foo = c.GetFoo("1")
+ print("Got foo: %s" % foo)
+```
+
+## MIT License
 
 Copyright (c) 2025 Luoshark
 

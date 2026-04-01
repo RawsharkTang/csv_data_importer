@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct83tqvvgt7eo"]
+[gd_scene format=3 uid="uid://ct83tqvvgt7eo"]
 
-[ext_resource type="Script" uid="uid://cj08e86jacg3y" path="res://scripts/data_manager.gd" id="1_wpyi5"]
+[ext_resource type="Script" uid="uid://qnd31lw2vjc4" path="res://scripts/CSharpLoadFirst.cs" id="1_wpyi5"]
+[ext_resource type="Script" uid="uid://cj08e86jacg3y" path="res://scripts/gd_load_second.gd" id="2_c88kw"]
 
-[node name="DataManager" type="Node"]
+[node name="Root" type="Node" unique_id=1871974347]
+
+[node name="CSharpLoader" type="Node" parent="." unique_id=1874286267]
+unique_name_in_owner = true
 script = ExtResource("1_wpyi5")
-csv_path = "res://csv/TestData2.csv"
+
+[node name="GDSRead" type="Node" parent="." unique_id=1522656748]
+script = ExtResource("2_c88kw")
