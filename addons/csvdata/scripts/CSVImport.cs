@@ -136,7 +136,7 @@ namespace CSVDataImporter
             };
             if (!headers.IsEmpty)
             {
-                csv_resource._headers = [.. headers.ColNames];
+                csv_resource._headers = [.. headers.ColNames.Where(h => !string.IsNullOrEmpty(h))];
                 csv_resource._data = [];
             }
             if (!reader.IsEmpty)
@@ -154,30 +154,35 @@ namespace CSVDataImporter
                         if (parse)
                         {
                             type_row.TryGetValue(h, out string type_name);
+                            var str = row[h];
                             switch (type_name)
                             {
                                 case "string":
-                                    v = Variant.From(row[h].Parse<string>());
+                                    v = Variant.From(str.Parse<string>());
                                     // value_dict.Add(h, Variant.From(row[h].Parse<string>()));
                                     break;
                                 case "stringName":
-                                    v = Variant.From(row[h].Parse<string>());
+                                    v = Variant.From(str.Parse<string>());
                                     // value_dict.Add(h, Variant.From(row[h].Parse<string>()));
                                     break;
                                 case "int":
-                                    v = Variant.From(row[h].Parse<int>());
+                                    var int_result = str.TryParse<int>();
+                                    v = Variant.From(int_result == null ? 0 : int_result.Value);
                                     // value_dict.Add(h, Variant.From(row[h].Parse<int>()));
                                     break;
                                 case "float":
-                                    v = Variant.From(row[h].Parse<float>());
+                                    var float_result = str.TryParse<float>();
+                                    v = Variant.From(float_result == null ? 0f : float_result.Value);
                                     // value_dict.Add(h, Variant.From(row[h].Parse<float>()));
                                     break;
                                 case "bool":
-                                    v = Variant.From(row[h].Parse<bool>());
+                                    var bool_result = str.TryParse<bool>();
+                                    v = Variant.From(bool_result == null ? false : bool_result.Value);
                                     // value_dict.Add(h, Variant.From(row[h].Parse<bool>()));
                                     break;
                                 case "json":
-                                    v = GD.StrToVar(row[h].ToString());
+                                    var is_empty = string.IsNullOrEmpty(str.ToString());
+                                    v = is_empty ? string.Empty : GD.StrToVar(str.ToString());
                                     // value_dict.Add(h, GD.StrToVar(row[h].ToString()));
                                     break;
                                 default:
@@ -205,15 +210,7 @@ namespace CSVDataImporter
             }
             else
             {
-                var loaded_resource = GD.Load<Resource>(sourceFile);
-                if (loaded_resource is CSVData loaded_csv)
-                {
-                    GD.Print($"Successfully loaded CSVData resource with {loaded_csv._headers.Count} headers and {loaded_csv._data.Count} data entries.");
-                }
-                else
-                {
-                    GD.PrintErr($"Failed to load the saved resource as CSVData. Loaded type: {loaded_resource.GetType().Name}");
-                }
+                GD.Print($"Successfully saved CSVData resource to {file_name}");
             }
             return err;
         }

@@ -1,10 +1,13 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 #nullable disable
 namespace CSVDataImporter
 {
     [GlobalClass, Tool]
-    public partial class CSVData : Resource
+    public partial class CSVData : Resource, IEnumerable<KeyValuePair<StringName, Godot.Collections.Dictionary>>
     {
         [Export]
         public Godot.Collections.Array<StringName> Headers
@@ -33,12 +36,20 @@ namespace CSVDataImporter
 
         public Dictionary<StringName, Godot.Collections.Dictionary> _data = [];
 
-
         public Godot.Collections.Dictionary Fetch(string key)
         {
             _data.TryGetValue(key, out var value);
             return value;
         }
 
+        public IEnumerator<KeyValuePair<StringName, Godot.Collections.Dictionary>> GetEnumerator()
+        {
+            return _data.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

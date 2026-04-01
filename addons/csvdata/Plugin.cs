@@ -16,6 +16,8 @@ namespace CSVDataImporter
 		{
 			CSVImport = new CSVImport();
 			AddImportPlugin(CSVImport, true);
+			GD.Print("CSVImporter Added Successfully");
+			GD.PushWarning("In Godot 4.6 editor only, the imported csv files wont be editable in the inspector. This is a known issue and wont affect runtime.");
 			// Initialization of the plugin goes here.
 		}
 

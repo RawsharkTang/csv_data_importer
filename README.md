@@ -8,6 +8,7 @@
 
 - Upgrades the project to 4.6
 - now support csvdata tsvdata as fileExtension
+- add extension method and attribute class to help with data convert
 
 #### Important Notes
 
@@ -19,13 +20,13 @@ Since 4.6 fixed the csv bug and force open csv as text in text editor, the gener
 2. Build the project and enable the plugin.
 
 ```
-<Project Sdk="Godot.NET.Sdk/4.4.1">
+<Project Sdk="Godot.NET.Sdk/4.5.1">
   <PropertyGroup>
  <TargetFramework>net8.0</TargetFramework>
  <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
   <ItemGroup>
- <PackageReference Include="Sep" Version="0.9.0" />
+ <PackageReference Include="Sep" Version="0.12.2" />
   </ItemGroup>
 </Project>
 ```
@@ -42,7 +43,7 @@ Since 4.6 fixed the csv bug and force open csv as text in text editor, the gener
    2. json type uses the godot str_to_var native calls
 4. Skip row can be set to skip a second header row.
 
-```
+```md
 id,name,description,level,percentage,switch,sequence
 string,string,string,int,float,bool,json
 id,Name,description,Rank,Hit Rate,can_hit,Damage
